@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/images/icon.png" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <title>Cadastro</title>
+  </head>
+  <body>
+    <h1>Cadastro</h1>
+    <form action="cadastro.php" method="post">
+      <label for="name"
+        >Nome:<input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="Escreva seu nome"
+          required
+          oninvalid="this.setCustomValidity('O Campo nome é obrigatório')"
+          oninput="this.setCustomValidity('')"
+      /></label>
+      <label for="email"
+        >E-mail:<input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Escreva seu e-mail"
+          required
+          oninvalid="this.setCustomValidity('O Campo e-mail é obrigatório e deve conter @ e domínio.')"
+          oninput="this.setCustomValidity('')"
+      /></label>
+      <label for="password"
+        >Senha:<input
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Escreva sua senha"
+          required
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          title="A senha deve conter, ao menos uma letra minúscula, uma letra maiúscula, um número e 8 caracteres"
+      /></label>
+      <label for="confirmPassword"
+        >Confirmar senha:<input
+          type="password"
+          name="confirmPassword"
+          id="confirmPassword"
+          placeholder="Escreva sua senha"
+          required
+          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          title="Suas senhas devem ser idênticas"
+      /></label>
+      <button type="submit">Enviar</button>
+    </form>
+  </body>
+</html>
