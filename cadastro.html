@@ -10,7 +10,7 @@
   </head>
   <body>
     <h1>Cadastro</h1>
-    <form action="cadastro.php" method="post">
+    <form action="" method="get">
       <label for="name"
         >Nome:<input
           type="text"
@@ -28,7 +28,7 @@
           id="email"
           placeholder="Escreva seu e-mail"
           required
-          oninvalid="this.setCustomValidity('O Campo e-mail é obrigatório e deve conter @ e domínio.')"
+          oninvalid="this.setCustomValidity('O Campo e-mail é obrigatório e deve conter @ e domínio')"
           oninput="this.setCustomValidity('')"
       /></label>
       <label for="password"
@@ -51,7 +51,20 @@
           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
           title="Suas senhas devem ser idênticas"
       /></label>
-      <button type="submit">Enviar</button>
+      <button type="submit" id="buttonSubmit">Enviar</button>
     </form>
+    <script>
+      const password = document.querySelector("#password");
+      const confirmPassword = document.querySelector("#confirmPassword");
+      const buttonSubmit = document.querySelector("#buttonSubmit");
+      buttonSubmit.addEventListener("click", (event) => {
+        if (password.value !== confirmPassword.value) {
+          event.preventDefault()
+          alert("Suas senhas devem ser idênticas!");
+        } else {
+          alert('Cadastro realizado com sucesso!')
+        }
+      });
+    </script>
   </body>
 </html>
